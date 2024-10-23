@@ -1,11 +1,12 @@
-import './App.css'
+import "./App.css";
+import Header from "./home/header/header";
 
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
-  )
+    <div className="w-full flex flex-col items-center">
+      <Header />
+    </div>
+  );
 }
 
-export default App
+export default App;
