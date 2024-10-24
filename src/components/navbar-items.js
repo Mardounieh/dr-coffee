@@ -1,7 +1,7 @@
 export const NavbarItems = [
   {
     title: "Product Series",
-    left: "left-[30%]",
+    left: "left-[0%]",
     children: [
       {
         title: "Coffee shop",
@@ -25,7 +25,7 @@ export const NavbarItems = [
   },
   {
     title: "Service & Support",
-    left: "left-[38%]",
+    left: "left-[1/4]",
     children: [
       {
         title: "Our principles",
@@ -46,7 +46,7 @@ export const NavbarItems = [
   },
   {
     title: "About Us",
-    left: "left-[46%]",
+    left: "left-[1/3]",
     children: [
       {
         title: "Company",
@@ -67,7 +67,7 @@ export const NavbarItems = [
   },
   {
     title: "Brand Center",
-    left: "left-[53%]",
+    left: "",
     children: [
       {
         title: "News",
@@ -82,7 +82,7 @@ export const NavbarItems = [
   },
   {
     title: "Coffee Academy",
-    left: "left-[61%]",
+    left: "",
     children: [
       {
         title: "Introduction",

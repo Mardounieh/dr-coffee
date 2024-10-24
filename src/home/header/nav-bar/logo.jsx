@@ -1,10 +1,9 @@
 export default function Logo() {
   return (
-    <a href="/" className="w-1/12">
+    <a href="/" className="w-28">
       <svg
-        className=""
+        className="fill-white hover:fill-red-600 duration-150"
         xmlns="http://www.w3.org/2000/svg"
-        fill="#fff"
         viewBox="0 0 106.47 12.21"
       >
         <defs>

@@ -1,14 +1,15 @@
-import { FiGlobe } from "react-icons/fi";
-import { IoSearch } from "react-icons/io5";
+import { useContext } from "react";
+import { MenuContext } from "../header";
 
-export default function Search() {
+export default function Search(props) {
+  const {setIsVisible} = useContext(MenuContext)
   return (
     <div className="flex items-center gap-4">
       <button className="flex gap-2 items-center text-zinc-100 hover:text-red-700 ease-in duration-300">
-        <FiGlobe className="text-lg" />
-        Language
+        {props.firstIcon}
+        {props.text}
       </button>
-      <button className=" text-zinc-100 hover:text-red-700 ease-in duration-300 text-lg "><IoSearch /></button>
+      <button onClick={() => {setIsVisible(true)}} className=" text-zinc-100 hover:text-red-700 ease-in duration-300 text-lg lg:pointer-events-none">{props.secondIcon}</button>
     </div>
   );
 }
