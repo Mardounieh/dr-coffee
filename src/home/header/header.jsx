@@ -5,6 +5,7 @@ import Search from "./nav-bar/search&lang";
 import { FiGlobe } from "react-icons/fi";
 import { IoSearch } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
+import Slider from "./slider/slider";
 
 export const MenuContext = createContext()
 
@@ -14,7 +15,7 @@ export default function Header() {
   return (
     <MenuContext.Provider value={{isVisible,setIsVisible}}>
     <header className="w-full flex items-center justify-between">
-      <div className="fixed top-0 w-full flex items-center justify-between px-5 pt-5 lg:px-16 lg:pt-3">
+      <div className="fixed top-0 w-full z-50 flex items-center justify-between px-5 pt-5 lg:px-16 lg:pt-3">
         <Logo />
         <Navbar />
         <div className="hidden lg:inline-block">
@@ -24,6 +25,7 @@ export default function Header() {
         <Search firstIcon={<IoSearch />} secondIcon={<FaBars />}/>
         </div>
       </div>
+      <Slider />
     </header>
     </MenuContext.Provider>
   );
