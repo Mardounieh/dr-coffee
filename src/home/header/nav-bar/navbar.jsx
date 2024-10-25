@@ -3,6 +3,7 @@ import { MenuContext } from "../header";
 import { IoIosArrowDown } from "react-icons/io";
 import { NavbarItems } from "../../../components/navbar-items";
 import Close from "./close";
+import List from "./list";
 
 export default function Navbar() {
   return (
@@ -47,44 +48,63 @@ export function MobileNavbar() {
   const [parentId, setParentId] = useState();
   const { isVisible } = useContext(MenuContext);
   return (
-    <ul
+    <div
       className={`overflow-y-scroll flex flex-col items-center duration-200 origin-right w-full ${
         isVisible ? "scale-x-100" : "scale-x-0"
       } h-screen absolute top-0 left-0 bg-white text-black`}
     >
       <Close />
-      {NavbarItems.map((item, index) => {
-        return (
-          <>
-            <li
-              key={index}
-              className="duration-150 text-sm font-bold cursor-pointer py-1 border-b w-10/12"
-            >
-              <a
-                href="#"
-                onClick={() => {setParentId(index)}}
-                className="flex items-center justify-between gap-1 p-5"
-              >
-                {item.title}
-                <IoIosArrowDown className="mt-1" />{" "}
-              </a>
-            </li>
-            <ul className={`px-5 pb-2 rounded flex-col w-10/12 gap-2 text-sm font-normal`}>
-                {item.children.map((child, i) => {
-                  return (
-                    <li
-                      href="/"
-                      key={i}
-                      className="p-1 duration-150 text-black hover:text-red-600 hover:bg-gradient-to-l hover:from-white hover:to-red-50/50 cursor-pointer"
-                    >
-                      {child.title}
-                    </li>
-                  );
-                })}
-            </ul>
-          </>
-        );
-      })}
-    </ul>
+      <ul className="w-11/12 flex flex-col ">
+        <List
+          title="Product Series"
+          children={[
+            "Coffee shop",
+            "CVS & Ho.Re.Ca",
+            "OCS",
+            "Home",
+            "Accessories",
+            "Shop now",
+          ]}
+        />
+        <List
+          title="Service & Support"
+          children={[
+            "Our principles",
+            "Contact specialist",
+            "FAQs",
+            "Watch tutorial",
+            "Download manual",
+          ]}
+        />
+        <List
+          title="About Us"
+          children={[
+            "Company",
+            "Our Business",
+            "Our technology",
+            "Our quality",
+            "Contact Us",
+          ]}
+        />
+        <List
+          title="Brand Center"
+          children={[
+            "News",
+            "Videos",
+            "Pictures",
+          ]}
+        />
+        <List
+          title="Coffee Academy"
+          children={[
+            "Introduction",
+            "Coffee experts",
+            "Course center",
+            "Photos",
+            "Consult now",
+          ]}
+        />
+      </ul>
+    </div>
   );
 }

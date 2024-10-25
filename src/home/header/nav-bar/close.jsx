@@ -7,7 +7,7 @@ import { FiGlobe } from "react-icons/fi";
 export default function Close() {
   const {setIsVisible} = useContext(MenuContext);
   return (
-    <div className="flex justify-between items-center w-10/12 py-5 pr-4 border-b">
+    <div className="flex justify-between items-center w-11/12 py-5 pr-4 border-b">
       <div className="flex items-center gap-2 cursor-pointer">
         <FiGlobe className="text-lg"/>
         <span className="font-bold">Languages</span>
