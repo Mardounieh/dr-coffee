@@ -9,7 +9,7 @@ export default function Search(props) {
         {props.firstIcon}
         {props.text}
       </button>
-      <button onClick={() => {setIsVisible(true)}} className=" text-zinc-100 hover:text-red-700 ease-in duration-300 text-lg lg:pointer-events-none">{props.secondIcon}</button>
+      <button onClick={() => {props.isBars && setIsVisible(true)}} className=" text-zinc-100 hover:text-red-700 ease-in duration-300 text-lg">{props.secondIcon}</button>
     </div>
   );
 }

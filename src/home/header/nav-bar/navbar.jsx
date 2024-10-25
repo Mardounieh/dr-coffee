@@ -5,8 +5,6 @@ import { NavbarItems } from "../../../components/navbar-items";
 import Close from "./close";
 
 export default function Navbar() {
-  const {isVisible} = useContext(MenuContext);
-  const [isShow, setIsShow] = useState(false);
   return (
     <>
       <ul className="relative hidden lg:flex gap-6">
@@ -17,7 +15,7 @@ export default function Navbar() {
                 key={index}
                 className="group/parent duration-150 text-zinc-100 hover:text-zinc-400 text-sm cursor-pointer py-2"
               >
-                <a href="/" className="flex items-center gap-1">
+                <a href="#" className="flex items-center gap-1">
                   {item.title}
                   <IoIosArrowDown className="mt-1" />{" "}
                 </a>
@@ -27,7 +25,7 @@ export default function Navbar() {
                   {item.children.map((child, i) => {
                     return (
                       <a
-                        href="/"
+                        href="#"
                         key={i}
                         className="duration-150 text-black hover:text-red-600"
                       >
@@ -41,39 +39,52 @@ export default function Navbar() {
           );
         })}
       </ul>
-      <ul className={`overflow-y-scroll flex flex-col items-center duration-200 origin-right w-full ${isVisible ? "scale-x-100" : "scale-x-0"} h-screen absolute top-0 left-0 bg-white text-black`}>
+    </>
+  );
+}
+
+export function MobileNavbar() {
+  const [parentId, setParentId] = useState();
+  const { isVisible } = useContext(MenuContext);
+  return (
+    <ul
+      className={`overflow-y-scroll flex flex-col items-center duration-200 origin-right w-full ${
+        isVisible ? "scale-x-100" : "scale-x-0"
+      } h-screen absolute top-0 left-0 bg-white text-black`}
+    >
       <Close />
       {NavbarItems.map((item, index) => {
-          return (
-            <>
-              <li
-                key={index}
-                className="duration-150 text-sm font-bold cursor-pointer py-1 border-b w-10/12 group/mother"
+        return (
+          <>
+            <li
+              key={index}
+              className="duration-150 text-sm font-bold cursor-pointer py-1 border-b w-10/12"
+            >
+              <a
+                href="#"
+                onClick={() => {setParentId(index)}}
+                className="flex items-center justify-between gap-1 p-5"
               >
-                <a href="#" onClick={() => {setIsShow(!isShow)}} className="flex items-center justify-between gap-1 p-5">
-                  {item.title}
-                  <IoIosArrowDown className="mt-1" />{" "}
-                </a>
-                <ul
-                  className="px-5 pb-2 rounded flex flex-col gap-2 text-sm font-normal"
-                >
-                  {item.children.map((child, i) => {
-                    return (
-                      <li
-                        href="/"
-                        key={i}
-                        className="p-1 duration-150 text-black hover:text-red-600 hover:bg-gradient-to-l hover:from-white hover:to-red-50/50 hidden group-hover/mother:inline-block"
-                      >
-                        {child.title}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </li>
-            </>
-          );
-        })}
-      </ul>
-    </>
+                {item.title}
+                <IoIosArrowDown className="mt-1" />{" "}
+              </a>
+            </li>
+            <ul className={`px-5 pb-2 rounded flex-col w-10/12 gap-2 text-sm font-normal`}>
+                {item.children.map((child, i) => {
+                  return (
+                    <li
+                      href="/"
+                      key={i}
+                      className="p-1 duration-150 text-black hover:text-red-600 hover:bg-gradient-to-l hover:from-white hover:to-red-50/50 cursor-pointer"
+                    >
+                      {child.title}
+                    </li>
+                  );
+                })}
+            </ul>
+          </>
+        );
+      })}
+    </ul>
   );
 }

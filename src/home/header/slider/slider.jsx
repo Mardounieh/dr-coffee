@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Pagination } from "swiper/modules";
+import { FreeMode, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
@@ -10,17 +10,35 @@ export default function Slider() {
     <Swiper
       breakpointsBase="window"
       grabCursor={true}
-      pagination={{ clickable: true }}
-      modules={[FreeMode, Pagination]}
+      pagination={{ clickable: true,}}
+      navigation={true}
+      modules={[FreeMode, Pagination, Autoplay]}
+      loop={true}
+      autoplay={{delay: 10000}}
+      className="my-swiper "
+      style={{
+        "--swiper-pagination-color": "#fff",
+        "--swiper-pagination-bullet-inactive-color": "#ffffff40",
+        "--swiper-pagination-bullet-inactive-opacity": "1",
+        "--swiper-pagination-bullet-size": "7px",
+        "--swiper-pagination-bullet-horizontal-gap": "10px"
+      }}
     >
       {SliderItems.map((item, index) => {
         return (
           <SwiperSlide key={index}>
-            <div
+            <div 
+              className="w-full h-screen flex justify-center"
+              style={{background : `url(${item.background})`, backgroundSize : "cover", backgroundPosition: "center" }}
             >
-              <img src={item.background} alt="" className="relative w-full h-screen"/>
-              <div className="relative">
-                <div className="absolute">{item.title}</div>
+              <div className="relative w-10/12 h-screen flex items-center justify-center lg:justify-start">
+                <div className="">
+                  <img src={item.device} alt="Coffee Machine" className="hidden lg:inline-flex w-2/3"/>
+                </div>
+                <div className="text-white text-center flex flex-col items-center lg:items-start gap-5">
+                  <h1 className="font-bold text-4xl">{item.title}</h1>
+                  {item.button}
+                </div>
               </div>
             </div>
           </SwiperSlide>
