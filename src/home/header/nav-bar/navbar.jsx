@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MenuContext } from "../header";
 import { IoIosArrowDown } from "react-icons/io";
-import { NavbarItems } from "../../../components/navbar-items";
+import { NavbarItems } from "./NavbarItems";
 import Close from "./close";
 import List from "./list";
 
@@ -45,7 +45,6 @@ export default function Navbar() {
 }
 
 export function MobileNavbar() {
-  const [parentId, setParentId] = useState();
   const { isVisible } = useContext(MenuContext);
   return (
     <div

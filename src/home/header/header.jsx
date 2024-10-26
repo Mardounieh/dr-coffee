@@ -30,7 +30,7 @@ export default function Header() {
             <Search isBars={true} firstIcon={<IoSearch />} secondIcon={<FaBars />} />
           </div>
         </div>
-        <div className="absolute top-0 left-0 w-full h-screen">
+        <div className="w-full h-screen">
           <Slider />
         </div>
       </header>
