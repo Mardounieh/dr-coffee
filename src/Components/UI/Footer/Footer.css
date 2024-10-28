@@ -1,0 +1,3 @@
+.parent:hover .child {
+  transform: rotateY('180deg');
+}
