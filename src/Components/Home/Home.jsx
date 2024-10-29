@@ -101,7 +101,7 @@ export default function Home() {
           </div>
         </div>
       </article>
-      <div className="flex gap-5">
+      <div className="flex flex-col md:flex-row gap-5">
         <div className="relative min-h-96 group bg-cover bg-center flex flex-col items-center pt-16 gap-5 text-white overflow-hidden rounded-lg aspect-[8/3] text-center">
           <img
             className="group-hover:scale-105 duration-1000 absolute inset-0 w-full h-full -z-10 object-cover"

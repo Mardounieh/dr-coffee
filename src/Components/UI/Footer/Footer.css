@@ -1,3 +1,7 @@
+.parent {
+  -webkit-perspective: 500px;
+  perspective: 500px;
+}
 .parent:hover .child {
-  transform: rotateY('180deg');
+  transform: rotate3d(0,1,0,180deg);
 }
