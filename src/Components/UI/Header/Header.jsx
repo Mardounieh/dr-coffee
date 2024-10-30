@@ -163,8 +163,8 @@ export default function Header() {
                 className="w-full h-screen flex justify-center"
                 style={{
                   background: `url(${item.background})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
+                  backgroundPosition: item.bgPosition,
+                  backgroundSize: "cover"
                 }}
               >
                 <div className="relative w-10/12 h-screen flex items-center justify-center lg:justify-start">
@@ -176,9 +176,9 @@ export default function Header() {
                     />
                   </div>
                   <div className="text-white text-center flex flex-col items-center lg:items-start gap-10">
-                    <h1 className="font-bold text-4xl">{item.title}</h1>
+                    <h1 className="font-bold text-2xl lg:text-4xl">{item.title}</h1>
                     {SliderItems.indexOf(item) > 0 && (
-                      <button className="flex items-center gap-2 h-fit w-fit py-1 px-6 text-white hover:bg-red-700 hover:border-red-700 duration-300 text-sm lg:text-lg border rounded-full">
+                      <button className="flex items-center gap-2 h-fit w-fit py-1 px-6 text-white hover:bg-red-700 hover:border-red-700 duration-300 text-sm lg:text-base border rounded-full">
                         {item.buttonTitle}
                         <FaArrowRightLong className="mt-1" />
                       </button>

@@ -13,9 +13,8 @@ import technical1 from "../../assets/picture/technical1.jpg";
 import technical2 from "../../assets/picture/technical2.jpg";
 import technical3 from "../../assets/picture/technical3.jpg";
 import technical4 from "../../assets/picture/technical4.jpg";
-import news1 from "../../assets/picture/news1.jpg"
-import news2 from "../../assets/picture/news2.jpg"
-
+import news1 from "../../assets/picture/news1.jpg";
+import news2 from "../../assets/picture/news2.jpg";
 
 // Icon
 import { IoArrowForward } from "react-icons/io5";
@@ -25,8 +24,10 @@ export default function Home() {
     <main className="w-11/12 mt-10 flex flex-col gap-10">
       <article className="flex flex-col gap-10">
         <div className="flex flex-col items-center gap-2">
-          <h2 className="text-2xl md:text-3xl font-bold">EXPLORE PRODUCTS</h2>
-          <p className="w-5/6 sm:w-1/2 lg:w-1/4 text-center font-light">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">
+            EXPLORE PRODUCTS
+          </h2>
+          <p className="w-5/6 sm:w-1/2 lg:w-2/6 text-sm lg:text-base text-center font-light">
             Premium coffee any time & anywhere Pleasant coffee experience
             dedicated to you
           </p>
@@ -53,18 +54,18 @@ export default function Home() {
         />
         <div className="bg-gray-100 rounded flex flex-col text-center items-center gap-5">
           <div className="w-full flex flex-col text-center items-center gap-2 mt-20">
-            <h2 className="text-2xl md:text-3xl font-bold">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">
               TECHNOLOGICAL EXPLORATION
             </h2>
-            <p className="text-center font-light">
+            <p className="text-sm md:text-base text-center font-light">
               Customer-oriented, technology-driven
             </p>
           </div>
-          <button className="bg-black hover:bg-red-600 duration-200 flex items-center gap-1 px-4 py-1.5  rounded-full text-white text-sm font-light">
+          <button className="bg-black hover:bg-red-600 duration-200 flex items-center gap-1 px-4 py-1.5  rounded-full text-white text-xs md:text-sm font-light">
             Explore <IoArrowForward className="mt-1" />
           </button>
-          <div className="w-10/12 flex gap-5">
-            <div>
+          <div className="w-10/12 flex flex-col gap-5 py-5">
+            <div className="flex gap-2">
               <div className="overflow-hidden rounded-xl">
                 <img
                   className="duration-1000 hover:scale-105"
@@ -72,24 +73,33 @@ export default function Home() {
                   alt="A barista"
                 />
               </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div className="flex gap-2">
-                <div className="overflow-hidden rounded-xl">
-                  <img
-                    className="duration-1000 hover:scale-105"
-                    src={technical2}
-                    alt="A man enjoying coffee"
-                  />
+              <div className="flex flex-col gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <div className="overflow-hidden rounded-xl">
+                    <img
+                      className="duration-1000 hover:scale-105"
+                      src={technical2}
+                      alt="A man enjoying coffee"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded-xl">
+                    <img
+                      className="duration-1000 hover:scale-105"
+                      src={technical3}
+                      alt="two people having fun"
+                    />
+                  </div>
                 </div>
-                <div className="overflow-hidden rounded-xl">
+                <div className="overflow-hidden hidden sm:inline-block rounded-xl">
                   <img
                     className="duration-1000 hover:scale-105"
-                    src={technical3}
-                    alt="two people having fun"
+                    src={technical4}
+                    alt="A business meeting"
                   />
                 </div>
               </div>
+            </div>
+            <div className="flex flex-col gap-2 sm:hidden">
               <div className="overflow-hidden rounded-xl">
                 <img
                   className="duration-1000 hover:scale-105"
@@ -101,15 +111,20 @@ export default function Home() {
           </div>
         </div>
       </article>
-      <div className="flex flex-col md:flex-row gap-5">
+      <div className="flex flex-col w-full md:flex-row gap-5">
         <div className="relative min-h-96 group bg-cover bg-center flex flex-col items-center pt-16 gap-5 text-white overflow-hidden rounded-lg aspect-[8/3] text-center">
           <img
             className="group-hover:scale-105 duration-1000 absolute inset-0 w-full h-full -z-10 object-cover"
             src={news1}
             alt="Card Background"
           />
-          <h2 className="text-2xl lg:text-3xl font-bold">Product Distribution</h2>
-          <p className="text-sm font-light w-5/6">Dr. Coffee's product and services now cover 100+ countries and regions</p>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">
+            Product Distribution
+          </h2>
+          <p className="text-sm font-light w-5/6">
+            Dr. Coffee's product and services now cover 100+ countries and
+            regions
+          </p>
           <button className="flex items-center gap-1 bg-white py-1.5 px-4 rounded-full text-black text-sm font-light hover:text-white hover:bg-red-600 duration-200">
             Explore <IoArrowForward className="mt-1" />
           </button>
@@ -120,8 +135,10 @@ export default function Home() {
             src={news2}
             alt="Card Background"
           />
-          <h2 className="text-2xl lg:text-3xl font-bold">Latest News</h2>
-          <p className="text-sm font-light w-5/6">All the latest updates about Dr. Coffee</p>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">Latest News</h2>
+          <p className="text-sm font-light w-5/6">
+            All the latest updates about Dr. Coffee
+          </p>
           <button className="flex items-center gap-1 bg-white py-1.5 px-4 rounded-full text-black text-sm font-light hover:text-white hover:bg-red-600 duration-200">
             Explore <IoArrowForward className="mt-1" />
           </button>

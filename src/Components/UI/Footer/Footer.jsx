@@ -19,8 +19,8 @@ export default function Footer() {
             <LuShoppingCart />
           </div>
           <div>
-            <h3 className="font-bold text-lg">Shop Now</h3>
-            <p className="hidden md:block text-sm text-neutral-400/80">
+            <h3 className="font-bold text-base lg:text-lg">Shop Now</h3>
+            <p className="hidden md:block text-xs lg:text-sm text-neutral-400/80">
               Order coffee machines online
             </p>
           </div>
@@ -30,8 +30,8 @@ export default function Footer() {
             <BiCommentDetail />
           </div>
           <div>
-            <h3 className="font-bold text-lg">Shop Now</h3>
-            <p className="hidden md:block text-sm text-neutral-400/80">
+            <h3 className="font-bold text-base lg:text-lg">Shop Now</h3>
+            <p className="hidden md:block text-xs lg:text-sm text-neutral-400/80">
               Order coffee machines online
             </p>
           </div>
@@ -41,15 +41,15 @@ export default function Footer() {
             <TfiHeadphoneAlt />
           </div>
           <div>
-            <h3 className="font-bold text-lg">Shop Now</h3>
-            <p className="hidden md:block text-sm text-neutral-400/80">
+            <h3 className="font-bold text-base lg:text-lg">Shop Now</h3>
+            <p className="hidden md:block text-xs lg:text-sm text-neutral-400/80">
               Order coffee machines online
             </p>
           </div>
         </div>
       </div>
       <div className="w-full flex flex-col items-center gap-10 bg-[#141b1f]">
-        <div className="hidden md:flex w-full justify-around pt-8 px-12">
+        <div className="hidden md:flex w-full justify-around pt-8 px-5 lg:px-12">
           {FooterItems.map((item, index) => {
             return (
               <div key={index} className="flex flex-col gap-2">
@@ -57,7 +57,7 @@ export default function Footer() {
                 <ul className="flex flex-col gap-1">
                   {item.children.map((child, i) => {
                     return (
-                      <li className="text-zinc-500 cursor-pointer" key={i}>
+                      <li className="text-zinc-500 cursor-pointer text-sm lg:text-base" key={i}>
                         <a href="#">{child.title}</a>
                       </li>
                     );
